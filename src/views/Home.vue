@@ -16,7 +16,8 @@ export default {
     return {
       projects:[
         {id:1, name: 'Insight', sprintDuration:7, sprintProgress:3, totalTasks:12, completedTasks:7},
-        {id:2, name: 'Hexagon', sprintDuration:14, sprintProgress:8, totalTasks:17, completedTasks:10}
+        {id:2, name: 'Roundabout', sprintDuration:7, sprintProgress:7, totalTasks:11, completedTasks:10},
+        {id:3, name: 'Hexagon', sprintDuration:14, sprintProgress:8, totalTasks:17, completedTasks:10}
       ]
     }
   },
