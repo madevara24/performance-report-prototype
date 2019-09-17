@@ -1,6 +1,18 @@
 <template>
   <div class="about">
-    <h1>This is project page</h1>
-    <p>{{$route.params.projectId}}</p>
+    <v-container class="my-5">
+      <v-row>
+        <ProjectSelector />
+      </v-row>
+    </v-container>
   </div>
 </template>
+
+<script>
+import ProjectSelector from '@/components/ProjectSelector'
+export default {
+  components:{
+    ProjectSelector
+  }
+}
+</script>
