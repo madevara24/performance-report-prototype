@@ -3,18 +3,19 @@
     <v-container id="project-selector">
         <v-row>
             <v-col cols=12 xs=12 md=6 lg=4>
-                <v-overflow-btn
+                <v-select
                 class="my-2"
-                @change="selectProject(selectedProject)"
+                @change="selectProject(selectedProject.projectId)"
                 v-model="selectedProject"
-                :items="items"
-                label="Projects"
-                target="#project-selector"
-                editable></v-overflow-btn>
+                :items="projects"
+                item-text="projectName"
+                item-value="projectId"
+                label="Select Project"
+                return-object
+                single-line
+                ></v-select>
             </v-col>
         </v-row>
-        <!-- <v-select v-model="select" :items="items" :rules="[v => !!v || 'Item is required']" label="Item" required></v-select> -->
-        <!-- <v-select v-model="select" :items="items" label="Projects"></v-select> -->
     </v-container>
 </template>
 
@@ -23,13 +24,13 @@ export default {
     data() {
         return {
             selectedProject: null,
-            items: [
-                {text:'Insight',id:1},
-                {text:'Roundabout',id:1},
-                {text:'Alchemist',id:1},
-                {text:'Hexagon',id:1},
-
-            ]
+            projects: [
+                { projectName: 'Insight', projectId: 1 },
+                { projectName: 'Roundabout', projectId: 2 },
+                { projectName: 'Hexagon', projectId: 3 },
+                { projectName: 'Fast Forward', projectId: 4 },
+                { projectName: 'Skipper', projectId: 5 },
+            ],
         }
     },
     methods: {
