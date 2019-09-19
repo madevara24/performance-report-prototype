@@ -7,12 +7,14 @@
         </v-col>
       </v-row>
       <v-row>
-        <h3>{{selectedProject}}</h3>
-      </v-row>
-      <v-row>
-        <v-card block>
-          <v-card-title>Deliverability</v-card-title>
-        </v-card>
+        <v-col cols=12 xs=12>
+          <v-card flat class="px-3 mb-5">
+            <v-card-title>Project Name</v-card-title>
+            <v-card-text>
+              
+            </v-card-text>
+          </v-card>
+        </v-col>
       </v-row>
     </v-container>
   </div>

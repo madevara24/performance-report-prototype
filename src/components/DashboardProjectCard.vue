@@ -1,7 +1,7 @@
 <template>
-  <v-card class="px-3 mb-5" flat>
+  <v-card class="px-3 mb-5" flat @click="selectProject(projectData.id)">
     <v-card-title>
-      <v-btn large depressed text @click="selectProject(projectData.id)">{{projectData.name}}</v-btn>
+      {{projectData.name}}
     </v-card-title>
     <v-divider></v-divider>
     <v-card-text>
