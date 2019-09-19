@@ -9,6 +9,11 @@
       <v-row>
         <h3>{{selectedProject}}</h3>
       </v-row>
+      <v-row>
+        <v-card block>
+          <v-card-title>Deliverability</v-card-title>
+        </v-card>
+      </v-row>
     </v-container>
   </div>
 </template>
@@ -16,12 +21,20 @@
 <script>
 import ProjectSelector from '@/components/ProjectSelector'
 export default {
+  created() {
+    //eslint-disable-next-line
+    // console.log(this.$route.params.projectId)
+  },
   components:{
     ProjectSelector
   },
   computed: {
     selectedProject(){
       return this.$store.state.selectedProject
+    }
+  },
+  methods: {
+    applySelectedProject(){
     }
   },
 }

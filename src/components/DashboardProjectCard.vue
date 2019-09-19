@@ -1,7 +1,7 @@
 <template>
   <v-card class="px-3 mb-5" flat>
     <v-card-title>
-      <v-btn large depressed text :to="{ name: 'project', params: { projectId: projectData.id }}">{{projectData.name}}</v-btn>
+      <v-btn large depressed text @click="selectProject(projectData.id)">{{projectData.name}}</v-btn>
     </v-card-title>
     <v-divider></v-divider>
     <v-card-text>
@@ -17,18 +17,14 @@
 
 <script>
 export default {
-    data() {
-        return {
-            
-        }
-    },
-    props:{
-        projectData:{}
-    },
-    methods: {
-      selectProject(){
-        // go to project overview page with selected project in display
-      }
-    },
+  props:{
+    projectData: null
+  },
+  methods: {
+    selectProject(id){
+      this.$store.commit('selectProject', id)
+      this.$router.push('project')
+    }
+  },
 }
 </script>

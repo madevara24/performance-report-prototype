@@ -13,6 +13,7 @@
     return-object
     single-line
     outlined
+    :value="selectedProjectName"
     ></v-select>
           
 </template>
@@ -22,6 +23,11 @@ export default {
     computed: {
         projectSelections(){
             return this.$store.getters.projectSelections
+        },
+        selectedProjectName(){
+            //eslint-disable-next-line
+            console.log(this.$store.getters.selectedProjectName)
+            return this.$store.getters.selectedProjectName
         }
     },
     data() {
@@ -30,9 +36,10 @@ export default {
         }
     },
     methods: {
-        selectProject(name){
+        selectProject(id){
             //eslint-disable-next-line
-            console.log(name)
+            console.log(id)
+            this.$store.commit('selectProject', id)
         }
     },
 }
