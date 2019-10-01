@@ -6,6 +6,8 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     strict: true,
     state:{
+        //auth
+        login: false,
         //projects
         selectedProjectId: null,
         projects: [
@@ -20,6 +22,11 @@ export const store = new Vuex.Store({
         selectedPerson: null,
     },
     getters:{
+        //auth
+        getIsLogin(state){
+            return state.login
+        },
+        //projects
         projectData(state){
             return state.projects
         },

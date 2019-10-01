@@ -1,7 +1,7 @@
 <template>
   <v-app>
     
-    <Navbar />
+    <Navbar v-if="isLogin"/>
 
     <v-content>
       <router-view>
@@ -22,5 +22,10 @@ export default {
   data: () => ({
     //
   }),
+    computed: {
+    isLogin(){
+      return this.$store.getters.getIsLogin
+    }
+  },
 };
 </script>
