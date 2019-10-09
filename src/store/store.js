@@ -3,11 +3,14 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export const store = new Vuex.Store({
+export default new Vuex.Store({
     strict: true,
     state:{
-        //auth
-        login: false,
+        //user
+        user:{
+            // isLogin: false,
+            isLogin: true,
+        },
         //projects
         selectedProjectId: null,
         projects: [
@@ -22,9 +25,9 @@ export const store = new Vuex.Store({
         selectedPerson: null,
     },
     getters:{
-        //auth
+        //user
         getIsLogin(state){
-            return state.login
+            return state.user.isLogin
         },
         //projects
         projectData(state){
@@ -62,6 +65,11 @@ export const store = new Vuex.Store({
         }
     },
     mutations:{
+        //users
+        setLogin(state, login){
+            state.user.isLogin = login
+        },
+        //project
         selectProject (state, projectId) {
             state.selectedProjectId = projectId
         }

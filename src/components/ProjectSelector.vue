@@ -1,6 +1,8 @@
 <template>
     <v-select
-    class="my-2"
+    class="pt-2"
+    dense
+    solo
     prepend-icon="folder"
     @change="selectProject(selectedProject.id)"
     v-model="selectedProject"
@@ -8,11 +10,8 @@
     item-text="name"
     item-value="id"
     label="Select Project"
-    hint="Select the project you want to view"
-    persistent-hint
     return-object
     single-line
-    outlined
     :value="selectedProjectName"
     ></v-select>
           
