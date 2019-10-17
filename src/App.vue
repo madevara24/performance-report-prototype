@@ -1,9 +1,8 @@
 <template>
   <v-app>
     
-    <Navbar />
-
-    <v-content>
+    <Navbar v-if="isLogin"/>
+    <v-content >
       <router-view>
         
       </router-view>
@@ -12,6 +11,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import Navbar from '@/components/Navbar'
 
 export default {
@@ -22,5 +22,10 @@ export default {
   data: () => ({
     //
   }),
+    computed: {
+    isLogin(){
+      return this.$store.getters.getIsLogin
+    }
+  },
 };
 </script>
