@@ -1,9 +1,9 @@
 <template>
   <div>
-    <v-app-bar flat app>
+    <v-toolbar flat>
 
       <v-toolbar-title class="grey--text">
-        <v-btn class="grey--text" depressed text block :ripple="false">
+        <v-btn class="grey--text" :ripple="false" :to="{ name: 'home'}">
           <div class="title">
             <span class="font-weight-light">AU</span>
             <span class="">SOM</span>
@@ -12,7 +12,7 @@
       </v-toolbar-title>
       <v-toolbar-items>
         <div class="px-2"></div>
-        <ProjectSelector />
+        <ProjectSelector v-if="isOnProjectPage" />
       </v-toolbar-items>
       <div class="flex-grow-1"></div>
 
@@ -33,12 +33,25 @@
           </v-list-item>
         </v-list>
       </v-menu>
-    </v-app-bar>
+      <template v-if="isOnProjectPage" #extension>
+          <v-toolbar-items>
+            <v-tabs grow>
+              <v-tab>
+                Board
+              </v-tab>
+              <v-tab>
+                Analytics
+              </v-tab>
+            </v-tabs>
+        </v-toolbar-items>
+        </template>
+    </v-toolbar>
 
   </div>
 </template>
 
 <script>
+/* eslint-disable */
 import ProjectSelector from '@/components/ProjectSelector'
 
 export default {
@@ -57,13 +70,13 @@ export default {
     ProjectSelector
   },
   computed: {
-    selectedProject(){
-      return this.$store.state.selectedProject
+    isOnProjectPage(){
+      console.log('On project page: ')
+      console.log(this.$route.path.includes('/project'))
+      return this.$route.path.includes('/project')
     }
   },
   methods: {
-    applySelectedProject(){
-    }
   },
 }
 </script>

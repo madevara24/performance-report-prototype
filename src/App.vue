@@ -2,8 +2,7 @@
   <v-app>
     
     <Navbar v-if="isLogin"/>
-
-    <v-content>
+    <v-content >
       <router-view>
         
       </router-view>
@@ -12,6 +11,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import Navbar from '@/components/Navbar'
 
 export default {

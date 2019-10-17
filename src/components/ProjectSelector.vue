@@ -25,8 +25,9 @@ export default {
         },
         selectedProjectName(){
             //eslint-disable-next-line
-            console.log(this.$store.getters.selectedProjectName)
-            return this.$store.getters.selectedProjectName
+            //console.log(this.$store.getters.selectedProjectName)
+            //return this.$store.getters.selectedProjectName
+            return "project name"
         }
     },
     data() {
@@ -38,7 +39,7 @@ export default {
         selectProject(id){
             //eslint-disable-next-line
             console.log(id)
-            this.$store.commit('selectProject', id)
+            this.$router.push({ name: 'board', params: { id } })
         }
     },
 }

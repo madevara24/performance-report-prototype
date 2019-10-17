@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
-
+/*eslint-disable */
 export default new Vuex.Store({
     strict: true,
     state:{
@@ -24,6 +24,21 @@ export default new Vuex.Store({
         //people
         selectedPerson: null,
     },
+    methods: {
+        getSelectedProject (state) {
+            var needle = state.selectedProjectId
+            console.log('needle: ' + needle)
+            var project = null
+            for (let index = 0; index < state.projects.length; index++) {
+                if(state.projects[index].id == needle){
+                    project = state.projects[index]
+                    console.log('project found')
+                }
+            }
+            console.log(project)
+            return project
+        },
+    },
     getters:{
         //user
         getIsLogin(state){
@@ -33,20 +48,11 @@ export default new Vuex.Store({
         projectData(state){
             return state.projects
         },
-        selectedProject (state) {
-            var needle = state.selectedProjectId
-            var project = null
-            for (let index = 0; index < state.projects.length; index++) {
-                if(state.projects[index].id == needle){
-                    project = state.projects[index]
-                }
-            }
-            return project
-        },
+        
         selectedProjectName (state) {
             var displayText = null
-            if (state.selectedProject) {
-                displayText = state.selectedProject.name
+            if (this.getSelectedProject()) {
+                displayText = this.getSelectedProject().name
             }else{
                 displayText = 'No selected project'
             }

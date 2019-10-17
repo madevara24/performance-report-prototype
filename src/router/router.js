@@ -7,6 +7,8 @@ import store from '../store/store'
 import Home from '../views/Home.vue'
 import Project from '../views/Project.vue'
 import Login from '../views/Login.vue'
+import Board from '../views/Board.vue'
+import Analytics from '../views/Analytics.vue'
 
 import guest from './middleware/guest'
 import auth from './middleware/auth'
@@ -28,14 +30,25 @@ const router = new Router({
       }
     },
     {
-      path: '/project',
+      path: '/project/:id',
       name: 'project',
       component: Project,
       meta: { 
         middleware:[
           auth
         ]
-      }
+      },
+      children: [
+        {
+          path: 'board',
+          name: 'board',
+          component: Board
+        },
+        {
+          path: 'analytics',
+          name: 'analytics',
+          component: Analytics
+        }]
     },
     {
       path: '/login',

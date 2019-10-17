@@ -20,7 +20,7 @@ import DashboardProjectCard from '@/components/DashboardProjectCard'
 export default {
   created() {
     //sujen titip
-    console.log(this.$store.getters.getIsLogin)
+    // console.log(this.$store.getters.getIsLogin)
     this.projects = this.getProjects()
     // this.axios
     //   .get('https://04a7424c.ngrok.io/api/v1/test')

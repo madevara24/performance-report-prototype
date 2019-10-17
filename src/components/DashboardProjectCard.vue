@@ -27,14 +27,17 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   props:{
     projectData: null
   },
   methods: {
     selectProject(id){
+      console.log('Clicked: Project' + this.projectData.name)
       this.$store.commit('selectProject', id)
-      this.$router.push('project')
+      console.log('Selected project: ' + this.$store.state.selectedProjectId)
+      this.$router.push({ name: 'board', params: { id } })
     }
   },
 }
