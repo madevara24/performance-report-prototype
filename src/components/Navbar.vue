@@ -36,12 +36,18 @@
       <template v-if="isOnProjectPage" #extension>
           <v-toolbar-items>
             <v-tabs grow>
-              <v-tab href="board">
+              <router-link to="board" tag="v-tab">
+                Board
+              </router-link>
+              <router-link to="analytics" tag="v-tab">
+                Analytics
+              </router-link>
+              <!-- <v-tab href="board" exact>
                 Board
               </v-tab>
-              <v-tab href="analytics">
+              <v-tab href="analytics" exact>
                 Analytics
-              </v-tab>
+              </v-tab> -->
             </v-tabs>
         </v-toolbar-items>
         </template>
