@@ -63,9 +63,13 @@
 </template>
 
 <script>
+/* eslint-disable*/
 import BoardColumnHeader from '../components/BoardColumnHeader.vue'
 import TaskCard from '../components/TaskCard.vue'
 export default {
+    created() {
+        
+    },
     data() {
         return {
             iceboxColumn:{

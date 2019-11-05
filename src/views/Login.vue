@@ -2,7 +2,7 @@
     <v-container class="fill-height" fluid>
         <v-row align="center" justify="center">
           <v-col cols="12" sm="12" md="4">
-            <v-btn href="https://04a7424c.ngrok.io/login-github" color="primary">
+            <v-btn href="http://127.0.0.1:8000/login-github" @click="login()" color="primary">
             Login
             </v-btn>
             <!-- <v-card>
@@ -35,6 +35,9 @@
       drawer: null,
     }),
     methods: {
+      login(){
+
+      }
     },
   }
 </script>

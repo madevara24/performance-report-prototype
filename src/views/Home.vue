@@ -23,7 +23,7 @@ export default {
     // console.log(this.$store.getters.getIsLogin)
     this.projects = this.getProjects()
     // this.axios
-    //   .get('https://04a7424c.ngrok.io/api/v1/test')
+    //   .get('http://127.0.0.1:8000/api/v1/project')
     //   .then(response => (console.log(response.data)))
   },
   data() {
